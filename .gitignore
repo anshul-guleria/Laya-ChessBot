@@ -1,4 +1,11 @@
 laya_finetuned_typed_decisions/
 .env
+.env.local
 
 .venv/
+*.db
+*.db-journal
+
+node_modules/
+.next/
+out/

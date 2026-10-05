@@ -1,0 +1,34 @@
+[project]
+name = "laya-chessbot-backend"
+version = "0.1.0"
+description = "FastAPI backend for the Laya chess bot."
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.121",
+    "uvicorn[standard]>=0.40",
+    "sqlalchemy>=2.1",
+    "pydantic>=2.13",
+    "pydantic-settings>=2.13",
+    "python-chess>=1.999",
+    "laya>=0.3.28",
+    "torch>=2.14",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "httpx>=0.28",
+    "ruff>=0.15",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
